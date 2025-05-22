@@ -1,0 +1,251 @@
+자바스크립트 - 웹개발 / 데스크톱 프로그램(vscode, atom, slack 등 개발)
+자바스크립트 런타임 : 자바스크립트가 실행될 수 있는 환경
+
+- 웹 브라우저
+- node.js : 구글의 자바스크립트 엔진을 이용해 서버 측에서 실행이 가능하도록 만든 것
+  spring boot 처럼 서버의 역할을 해주기도 함 
+  npm : package 를 실행하는 명령어
+  yarn : npm 보다 향상
+  자바스크립트 기반의 프론트 엔드 기술
+
+- Svelte, Vue, React, Angular
+
+
+리액트
+- 자바스크립트 기반의 라이브러리
+
+환경설정
+
+.gitignore - react체크
+
+1. Node.js 설치 (패키지 관리도구 npm 이 같이 설치됨)
+    
+    (패키지 설치 : npm i 패키지명) npm구글링하여 설치가능
+    
+2. yarn 설치(선택사항) - 패키지 관리도구 / npm 보다 효율적이고 빠름
+    
+    터미널
+    
+    npm i —global yarn ⇒ (yarn을 사용할수 있게 됨)
+    
+    yarn —version
+    
+    yarn add 패키지명 ⇒ (패키지 추가)
+    
+    yarn add tailwindcss @tailwindcss/vite  => 터미널에서 입력하여설치 css 작업 쉽게 도와줌
+    
+3. **extension설치**
+    
+    **ESLint**/ **Reactjs code snippets** / **Tailwind CSS IntelliSense / Material Icon Theme**
+    
+    emmet include설정
+    
+    default formatter - prettier
+    
+4. react 프로그램 생성방식
+    
+    cra방식 : npx create-react-app 앱이름 (전통적인방법)
+    
+    vite 환경에서 react 프로그램 생성
+    
+    - yarn create vite ⇒ 선택하면서 진행
+    - yarn create vite 앱이름(begin1) —template react ⇒ 처음부터 한번에 지정
+5. 프로젝트 구조
+    
+    package.json : Node기반 프로젝트는 가지고 있음 (spring에서의 pom.xml)
+    
+    eslint.config.js : 자바스크립트 문법 검사(eslint)도구의 환경설정 파일
+    
+    vite.config.js : vite 환경설정파일
+    
+
+명령어
+
+yarn dev : 작성하는 코드 실시간 반영확인하며 페이지 개발
+
+o + enter : to open in browser
+
+q + enter : to quit
+
+c + enter : to clear console
+
+r + enter : to restart the server
+
+yarn build : 개발된 코드들을 하나로 합쳐서 서비스 할 수 있는 상태로 만들어 줌
+
+- dist 폴더 생성됨
+- src 폴더 안 jsx 파일들을 번들러(묶어주는 개념)를 이용해 최적화 작업을 하게 됨
+
+yarn preview : 미리보기 (서버에 배포된 후 실행결과 보기)
+
+화면을 Component 단위로 분해함 ⇒ jsx라고 부름
+
+1. 클래스
+2. 함수
+
+jsx에서는 빈 태그를 허용함 <></>
+
+컴포넌트는 대문자로 생성
+
+jsx 문법
+
+- 자바스크립트 확장 문법
+- 브라우저에서 실행되기 전에 코드가 번들링(웹팩 등을통해 하나로 묶음) 되는 과정에서
+    
+    바벨(자바스크립트 문법으로 변환)을 사용하여 일반 자바스크립트 코드로 변환됨
+    
+- 중괄호{} 사용 : 변수 출력
+- 하나의 태그로 만들어서 보낸다
+- if 문 대신 조건부 연산자를 주로 사용 ⇒ 조건 ? 참 : 거짓
+    
+    (참인경우와 거짓인경우 해야할 동작 둘다필요함)
+    
+- && 를 사용한 조건부 렌더링가능 (참인 경우에만 동작)
+
+- ?? or || : null or undefined 인 경우 뒤에오는 값 반환
+    
+    ( {name ?? <em>No Name</em>} 이 경우 null or undefined면 No Name 반환 )
+    
+    단, 비어있는 문자열 (””) 일 경우 ??
+    
+    ?? : 비어있는 문자열은 처리 안해줌
+    
+    || : 비어있는 문자열 처리 가능
+    
+
+map ⇒ 새로운 배열로 만들어줌
+
+filter ⇒ true, false 조건에 맞는 요소들로 새로운 배열을 만들어줌
+
+join ⇒ 배열형태를 제거하고 문자열로 반환해줌
+
+함수 즉시실행 (()=>{})()
+
+- style ( css반영 )
+    1. ~.css : import 사용하여 적용
+    2. 아래 코드와같이 jsx 안에서 스타일 직접 선언
+    3. inline 방식 아래 코드상에서 <div style={{ color: "red", fontSize: "25px" }}>홍길동</div>
+    4. CSS Module (임의의이름.module.css) : 컴포넌트마다 스타일 클래스명이 중첩되는 것 방지
+    
+    ```jsx
+    const MyStyle = () => {
+      const style = {
+        background: "black",
+        color: "aqua",
+        fontSize: "48px",
+        fontWeight: "bold",
+        padding: 16,
+      };
+      return (
+        <div>
+          <div style={style}>홍길동</div>
+          <div style={{ color: "red", fontSize: "25px" }}>홍길동</div>
+        </div>
+      );
+    };
+    ```
+    
+- <br>같은 단독태그도 무조건 닫는 태그있어야 함
+
+---
+
+props : properties 줄임말
+
+- key value 속성형태로 넣음
+- 컴포넌트들 사이에서 데이터를 전달 시 사용
+- 부모가 자식에게 넘겨줌 (자식에서 부모로는 전달불가)
+    
+    <App name=”홍길동”/>
+    
+    <App name=”홍길동”>내용</App>
+    
+
+```jsx
+import React from "react";
+import styles from "./Card.module.css";
+
+const InfoCard = (props) => {
+  return (
+    <div className={styles.card}>
+      <h2>{props.title}</h2>
+      <p>{props.content}</p>
+      <p>Author : {props.author}</p>
+    </div>
+  );
+};
+
+export default InfoCard;
+
+InfoCard 컴포넌트(자식)에서 Card컴포넌트(부모)에게 props 변수로 받아냄
+```
+
+```jsx
+import React from "react";
+import InfoCard from "./InfoCard";
+
+const Card = () => {
+  return (
+    <>
+      <InfoCard
+        title="Props in React"
+        content="Props pass data from one component to another"
+        author="Alice"
+      ></InfoCard>
+      <InfoCard
+        title="React Composition"
+        content="Composition makes your components more reusable"
+        author="Charlie"
+      ></InfoCard>
+    </>
+  );
+};
+
+export default Card;
+
+```
+
+children
+
+- props의 일종
+- 컴포넌트 태그사이에 내용 보여주기
+- 외부에 레이아웃 컴포넌트를 구성한 뒤 내용을 자유롭게 작성가능
+
+---
+
+state
+
+useState()
+
+- 동적으로 변화하는 변수의 상태를 확인하여 re-rendering처리
+- state(상태)를 관리하는 함수
+
+```jsx
+import React, { use, useState } from "react";
+
+const Counter = () => {
+  // useState : 변수명, 함수명
+  // 변수명은 자유롭게 줄수있음
+  // [변수명, 함수명] = useState(초기값);
+  const [count, setCount] = useState(0);
+
+  console.log(useState(0));
+
+  const increase = () => {
+    setCount(count + 1);
+  };
+  const decrease = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h1>count : {count}</h1>
+      <button onClick={increase}>+1</button>
+      <button onClick={decrease}>-1</button>
+    </div>
+  );
+};
+
+export default Counter;
+
+```
