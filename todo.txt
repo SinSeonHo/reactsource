@@ -1,0 +1,19 @@
+아이콘이 필요하다면 ReactIcons 검색 후 가져오기
+페이지 디자인이 필요하다면 tailwindcss 검색 후 가져오기 (클래스 속성 설정시 className으로 해야함)
+
+
+- TodoTemplate
+화면 가운데정렬, 앱 타이틀 보여주기
+children으로 내부 jsx를 props 로 받아와 렌더링
+
+- TodoInsert
+새로운 Todo 입력, 추가 컴포넌트
+state를 통해 인풋 상태 관리
+
+- TodoListItem
+각 할 일 항목에 대한 정보를 보여주는 컴포넌트
+Todo 객체를 props로 받아와 상태에 따라 다른 스타일의 UI 보여주기
+
+- TodoList
+Todos 배열을 props로 받아오기
+배열 내장 함수 mpa을 사용해서 여러 개의 TodoListItem 컴포넌트로 변환하여 보여주기

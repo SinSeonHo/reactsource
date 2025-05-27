@@ -1,3 +1,15 @@
+프로젝트생성
+
+yarn create vite 앱이름(begin1) --template react
+yarn add 패키지명
+yarn add tailwindcss @tailwindcss/vite
+yarn add react-icons
+yarn add axios
+yarn add react-router-dom
+
+
+
+
 자바스크립트 - 웹개발 / 데스크톱 프로그램(vscode, atom, slack 등 개발)
 자바스크립트 런타임 : 자바스크립트가 실행될 수 있는 환경
 
@@ -33,10 +45,17 @@
     yarn add 패키지명 ⇒ (패키지 추가)
     
     yarn add tailwindcss @tailwindcss/vite  => 터미널에서 입력하여설치 css 작업 쉽게 도와줌
+    vite.config.js에 tailwindcss/vite임포트 + plugin 에 추가
+
+    yarn add react-icons => 아이콘 추가
+
+    yarn add axios
+
+    yarn add react-router-dom
     
 3. **extension설치**
     
-    **ESLint**/ **Reactjs code snippets** / **Tailwind CSS IntelliSense / Material Icon Theme**
+    ESLint / **Reactjs code snippets** / **Tailwind CSS IntelliSense / Material Icon Theme**
     
     emmet include설정
     
@@ -49,7 +68,7 @@
     vite 환경에서 react 프로그램 생성
     
     - yarn create vite ⇒ 선택하면서 진행
-    - yarn create vite 앱이름(begin1) —template react ⇒ 처음부터 한번에 지정
+    - yarn create vite 앱이름(begin1) --template react ⇒ 처음부터 한번에 지정
 5. 프로젝트 구조
     
     package.json : Node기반 프로젝트는 가지고 있음 (spring에서의 pom.xml)
@@ -126,6 +145,7 @@ join ⇒ 배열형태를 제거하고 문자열로 반환해줌
     2. 아래 코드와같이 jsx 안에서 스타일 직접 선언
     3. inline 방식 아래 코드상에서 <div style={{ color: "red", fontSize: "25px" }}>홍길동</div>
     4. CSS Module (임의의이름.module.css) : 컴포넌트마다 스타일 클래스명이 중첩되는 것 방지
+    5. 디자인 라이브러리 사용(react-bootstrap, tailwindcss)
     
     ```jsx
     const MyStyle = () => {
