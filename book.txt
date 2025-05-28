@@ -6,3 +6,5 @@ yarn add tailwindcss @tailwindcss/vite
 yarn add react-icons
 yarn add axios
 yarn add react-router-dom
+
+Book List 에 Book 내용 하나씩 여러개표현
