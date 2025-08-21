@@ -26,6 +26,7 @@ import Memo from "./Memo";
 import Average from "./Average";
 import Parent from "./Parent";
 import BookList from "./BookList";
+import AdGenerator from "./AdGenerator";
 
 function App() {
   return (
@@ -53,7 +54,8 @@ function App() {
       {/* <Memo></Memo> */}
       {/* <Average></Average> */}
       {/* <Parent></Parent> */}
-      <BookList></BookList>
+      {/* <BookList></BookList> */}
+      <AdGenerator></AdGenerator>
     </>
   );
 }

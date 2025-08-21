@@ -8,3 +8,19 @@ yarn add axios
 yarn add react-router-dom
 
 Book List 에 Book 내용 하나씩 여러개표현
+
+
+// http://localhost:5173/ => Home 보여주기
+// http://localhost:5173/add => AddBook 보여주기
+// http://localhost:5173/edit/1 => EditBook 보여주기
+// http://localhost:5173/books/1 => BookDetails 보여주기
+// 잘못된경로 => Error 보여주기
+
+<Link
+  to={{
+    pathname: "/some/path",
+    search: "?query=string",
+    hash: "#hash",
+  }}
+링크 대신에 useNavigate 사용가능해서이동가능
+const navigate = useNavigate();
